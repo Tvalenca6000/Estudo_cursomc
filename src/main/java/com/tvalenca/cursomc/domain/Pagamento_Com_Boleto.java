@@ -4,13 +4,17 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tvalenca.cursomc.domain.enums.Estado_Pagamento;
 
 @Entity
 public class Pagamento_Com_Boleto extends Pagamento {
     private static final long serialVersionUID = 1L;
     
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date dataVencimento;
+
+    @JsonFormat(pattern="dd/MM/yyyy")
     private Date dataPagamento;
 
     public Pagamento_Com_Boleto(){}
